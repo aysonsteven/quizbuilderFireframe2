@@ -1,14 +1,45 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="authentication">
+      <ion-segment-button value="login">
+        <ion-icon name="person"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="register">
+        <ion-icon name="person-add"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <div [ngSwitch]="authentication">
+    <div *ngSwitchCase="'login'">
+      <h3>Login</h3>
+      <ion-list>
+        <ion-item>
+          <ion-label fixed>Email</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label fixed>Password</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-list>
+      <button ion-button small (click)="onClickLogin()">Login</button>
+    </div>
+    <div *ngSwitchCase="'register'">
+      <h3>Register</h3>
+      <ion-list>
+        <ion-item>
+          <ion-label fixed>Email</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label fixed>Password</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-list>
+      <button ion-button small>Register</button>
+    </div>
+  </div>
 </ion-content>
