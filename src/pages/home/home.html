@@ -18,11 +18,11 @@
       <ion-list>
         <ion-item>
           <ion-label fixed>Email</ion-label>
-          <ion-input></ion-input>
+          <ion-input [(ngModel)]="loginUserMail"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label fixed>Password</ion-label>
-          <ion-input></ion-input>
+          <ion-input [(ngModel)]="loginUserPass"></ion-input>
         </ion-item>
       </ion-list>
       <button ion-button small (click)="onClickLogin()">Login</button>
@@ -32,14 +32,14 @@
       <ion-list>
         <ion-item>
           <ion-label fixed>Email</ion-label>
-          <ion-input></ion-input>
+          <ion-input [(ngModel)]="regUserMail"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label fixed>Password</ion-label>
-          <ion-input></ion-input>
+          <ion-input [(ngModel)]="regUserPass"></ion-input>
         </ion-item>
       </ion-list>
-      <button ion-button small>Register</button>
+      <button ion-button small (click)="onClickRegister()">Register</button>
     </div>
   </div>
 </ion-content>
